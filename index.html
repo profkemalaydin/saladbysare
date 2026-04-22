@@ -286,6 +286,15 @@
     }
     .step strong { font-size: .9rem; color: var(--text); display: block; }
     .step span { font-size: .8rem; color: var(--text-light); }
+    .text-btn {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--green-deep); color: #fff;
+      font-weight: 700; font-size: 1rem;
+      padding: .85rem 2rem; border-radius: 999px;
+      box-shadow: 0 4px 20px rgba(26,107,60,.3);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .text-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,107,60,.4); }
     .venmo-btn {
       display: inline-flex; align-items: center; gap: .6rem;
       background: #008CFF; color: #fff;
@@ -377,7 +386,7 @@
           <span class="health-chip">💚 Protein-rich</span>
           <span class="health-chip">💚 Heart-healthy fats</span>
         </div>
-        <a href="#order" class="card-order">Order This Bowl →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20this%20bowl." class="card-order">📱 Text to Order →</a>
       </div>
     </div>
 
@@ -408,7 +417,7 @@
           <span class="health-chip">💚 Anti-inflammatory</span>
           <span class="health-chip">💚 Gut-friendly</span>
         </div>
-        <a href="#order" class="card-order">Order This Bowl →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20this%20bowl." class="card-order">📱 Text to Order →</a>
       </div>
     </div>
 
@@ -439,7 +448,7 @@
           <span class="health-chip">💚 Healthy fats</span>
           <span class="health-chip">💚 Rich in vitamins</span>
         </div>
-        <a href="#order" class="card-order">Order This Bowl →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20this%20bowl." class="card-order">📱 Text to Order →</a>
       </div>
     </div>
 
@@ -506,7 +515,7 @@
       <div class="step">
         <div class="step-num">2</div>
         <strong>Text Sare</strong>
-        <span>Send your order &amp; address</span>
+        <span>(346) 715-3432 · order &amp; address</span>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -520,7 +529,11 @@
       </div>
     </div>
 
-    <a href="https://venmo.com/kemalaydin" target="_blank" class="venmo-btn">
+    <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20a%20salad%20bowl." class="text-btn">
+      📱 Text to Order · (346) 715-3432
+    </a>
+
+    <a href="https://venmo.com/kemalaydin" target="_blank" class="venmo-btn" style="margin-top:.75rem;">
       💙 Pay on Venmo @kemalaydin
     </a>
     <p class="order-note">Columbus, OH deliveries only · Same-day orders by noon · Cash also accepted</p>
