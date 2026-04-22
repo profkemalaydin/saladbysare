@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salad Bowls by Sare — Columbus, OH</title>
+  <style>
+    /* ── Reset & Base ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-deep:   #1a6b3c;
+      --green-mid:    #2d9b5a;
+      --green-light:  #e8f7ee;
+      --green-accent: #4caf78;
+      --cream:        #fafdf7;
+      --text:         #1c2b1e;
+      --text-light:   #4a6552;
+      --radius:       16px;
+      --shadow:       0 4px 24px rgba(26,107,60,.10);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #d4edda;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2rem;
+    }
+    .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--green-deep); }
+    .nav-brand span { color: var(--green-accent); }
+    .nav-links { display: flex; gap: 1.8rem; }
+    .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text-light); transition: color .2s; }
+    .nav-links a:hover { color: var(--green-deep); }
+    .nav-order {
+      background: var(--green-deep); color: #fff;
+      padding: .5rem 1.2rem; border-radius: 999px;
+      font-size: .85rem; font-weight: 600;
+      transition: background .2s;
+    }
+    .nav-order:hover { background: var(--green-mid); }
+
+    /* ── Hero ─────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 60%, #5bbf82 100%);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      padding: .35rem 1rem;
+      font-size: .8rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em { font-style: normal; color: #a8f0c0; }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      max-width: 560px;
+      margin: 0 auto 2.2rem;
+      opacity: .9;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #fff; color: var(--green-deep);
+      font-weight: 700; font-size: 1rem;
+      padding: .85rem 2rem; border-radius: 999px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.18);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,.22); }
+    .hero-sub {
+      margin-top: 1.5rem;
+      font-size: .85rem;
+      opacity: .7;
+    }
+    .hero-emojis {
+      margin-top: 3rem;
+      font-size: 2rem;
+      letter-spacing: .4rem;
+      opacity: .8;
+    }
+
+    /* ── Section Wrapper ──────────────────────────── */
+    section { padding: 5rem 1.5rem; }
+    .section-label {
+      text-align: center;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: .6rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green-deep);
+      margin-bottom: .6rem;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 480px;
+      margin: 0 auto 3rem;
+      font-size: .95rem;
+    }
+
+    /* ── Menu ─────────────────────────────────────── */
+    #menu { background: #fff; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--cream);
+      border: 1.5px solid #d4edda;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column;
+      transition: transform .25s, box-shadow .25s;
+      position: relative;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(26,107,60,.15); }
+    .card-header {
+      padding: 1.6rem 1.6rem 1.2rem;
+      background: linear-gradient(135deg, var(--green-light) 0%, #d0f0df 100%);
+    }
+    .card-emoji { font-size: 2.6rem; margin-bottom: .5rem; }
+    .card-name { font-size: 1.2rem; font-weight: 800; color: var(--green-deep); }
+    .card-tagline { font-size: .88rem; color: var(--text-light); margin-top: .2rem; font-style: italic; }
+    .card-price {
+      font-size: 1.5rem; font-weight: 800;
+      color: var(--green-mid);
+      margin-top: .5rem;
+    }
+    .badge-popular {
+      position: absolute; top: 1rem; right: 1rem;
+      background: #ff8c42; color: #fff;
+      font-size: .72rem; font-weight: 700;
+      padding: .25rem .7rem; border-radius: 999px;
+      letter-spacing: .04em;
+    }
+    .card-body { padding: 1.4rem 1.6rem; flex: 1; display: flex; flex-direction: column; gap: 1rem; }
+    .chip-group { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .chip {
+      font-size: .8rem; font-weight: 600;
+      padding: .28rem .65rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .chip-green  { background: #d4f7e0; color: #1a6b3c; }
+    .chip-red    { background: #ffe5e5; color: #b33; }
+    .chip-orange { background: #fff0db; color: #a05a00; }
+    .chip-purple { background: #ede5f7; color: #5b3d8a; }
+    .chip-blue   { background: #e5f0ff; color: #1a4b8a; }
+    .chip-pink   { background: #ffe5f0; color: #8a1a4b; }
+    .chip-yellow { background: #fffde5; color: #8a7200; }
+    .card-dressing {
+      font-size: .85rem;
+      color: var(--text-light);
+      background: #fff;
+      border-left: 3px solid var(--green-accent);
+      padding: .6rem .9rem;
+      border-radius: 0 8px 8px 0;
+    }
+    .card-dressing strong { display: block; color: var(--text); font-size: .8rem; margin-bottom: .25rem; }
+    .card-health { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .health-chip {
+      font-size: .75rem;
+      background: var(--green-light);
+      color: var(--green-deep);
+      padding: .2rem .6rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .card-order {
+      margin-top: auto;
+      display: block;
+      text-align: center;
+      background: var(--green-deep); color: #fff;
+      padding: .75rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: .95rem;
+      transition: background .2s;
+    }
+    .card-order:hover { background: var(--green-mid); }
+
+    /* ── About ────────────────────────────────────── */
+    #about {
+      background: linear-gradient(135deg, var(--green-light) 0%, #d0f0df 100%);
+    }
+    .about-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-text h2 { font-size: 1.9rem; font-weight: 800; color: var(--green-deep); margin-bottom: 1rem; }
+    .about-text p { color: var(--text-light); font-size: .96rem; margin-bottom: 1rem; }
+    .about-pillars { display: flex; flex-direction: column; gap: .7rem; margin-top: 1.2rem; }
+    .pillar {
+      display: flex; align-items: flex-start; gap: .75rem;
+      background: #fff;
+      border-radius: 10px;
+      padding: .8rem 1rem;
+      box-shadow: 0 2px 10px rgba(26,107,60,.07);
+    }
+    .pillar-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .pillar-text strong { display: block; font-size: .9rem; color: var(--text); }
+    .pillar-text span { font-size: .82rem; color: var(--text-light); }
+    .about-visual {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .about-visual .big-emoji { font-size: 5rem; }
+    .about-visual h3 { font-size: 1.1rem; font-weight: 700; color: var(--green-deep); margin: .8rem 0 .4rem; }
+    .about-visual p { font-size: .85rem; color: var(--text-light); }
+
+    /* ── Order ────────────────────────────────────── */
+    #order { background: #fff; }
+    .order-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .order-steps {
+      display: flex; gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .step {
+      flex: 1; min-width: 140px;
+      background: var(--green-light);
+      border-radius: 12px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+    }
+    .step-num {
+      width: 32px; height: 32px;
+      background: var(--green-deep); color: #fff;
+      border-radius: 50%;
+      font-size: .85rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto .6rem;
+    }
+    .step strong { font-size: .9rem; color: var(--text); display: block; }
+    .step span { font-size: .8rem; color: var(--text-light); }
+    .venmo-btn {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: #008CFF; color: #fff;
+      font-weight: 700; font-size: 1rem;
+      padding: .85rem 2rem; border-radius: 999px;
+      box-shadow: 0 4px 20px rgba(0,140,255,.3);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .venmo-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,140,255,.4); }
+    .order-note { margin-top: 1.2rem; font-size: .82rem; color: var(--text-light); }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      background: var(--green-deep);
+      color: rgba(255,255,255,.8);
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
+    footer strong { color: #fff; }
+    footer p { font-size: .88rem; margin: .3rem 0; }
+    footer a { color: #a8f0c0; }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 640px) {
+      nav { padding: .8rem 1.2rem; }
+      .nav-links { display: none; }
+      .about-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">🥗 <span>Salad Bowls</span> by Sare</div>
+  <div class="nav-links">
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#order">Order</a>
+  </div>
+  <a href="#order" class="nav-order">Order Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-badge">📍 Columbus, OH · Home-made & Fresh</div>
+  <h1>Fresh Salad Bowls<br /><em>Delivered to Your Door</em></h1>
+  <p>Hand-crafted salad bowls made with locally sourced ingredients and Thermomix-emulsified dressings. No preservatives. Ever.</p>
+  <a href="#menu" class="hero-cta">
+    🥗 See the Menu
+  </a>
+  <p class="hero-sub">Order by text · Pay via Venmo · Same-day delivery</p>
+  <div class="hero-emojis">🥬 🍅 🥑 🫒 🥕 🧀 🌽</div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <p class="section-label">Fresh Every Day</p>
+  <h2 class="section-title">This Week's Bowls</h2>
+  <p class="section-sub">All bowls made to order with fresh ingredients and house-made dressings.</p>
+
+  <div class="cards">
+
+    <!-- Mediterranean -->
+    <div class="card">
+      <div class="badge-popular">⭐ Most Popular</div>
+      <div class="card-header">
+        <div class="card-emoji">🫒</div>
+        <div class="card-name">Mediterranean Bowl</div>
+        <div class="card-tagline">"Light, bright &amp; incredibly satisfying"</div>
+        <div class="card-price">$12</div>
+      </div>
+      <div class="card-body">
+        <div class="chip-group">
+          <span class="chip chip-green">🥬 Romaine</span>
+          <span class="chip chip-green">🥒 Cucumber</span>
+          <span class="chip chip-red">🍅 Cherry Tomatoes</span>
+          <span class="chip chip-purple">🫒 Kalamata Olives</span>
+          <span class="chip chip-blue">🧀 Feta Cheese</span>
+          <span class="chip chip-pink">🧅 Red Onion</span>
+          <span class="chip chip-yellow">🫘 Chickpeas</span>
+        </div>
+        <div class="card-dressing">
+          <strong>🍋 House Lemon-Herb Dressing</strong>
+          Honey · Dijon · Fresh lemon · Olive oil · Oregano — emulsified in Thermomix
+        </div>
+        <div class="card-health">
+          <span class="health-chip">💚 High fiber</span>
+          <span class="health-chip">💚 Protein-rich</span>
+          <span class="health-chip">💚 Heart-healthy fats</span>
+        </div>
+        <a href="#order" class="card-order">Order This Bowl →</a>
+      </div>
+    </div>
+
+    <!-- Asian Sesame -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🥢</div>
+        <div class="card-name">Asian Sesame Bowl</div>
+        <div class="card-tagline">"Crunchy, nutty &amp; full of umami"</div>
+        <div class="card-price">$13</div>
+      </div>
+      <div class="card-body">
+        <div class="chip-group">
+          <span class="chip chip-green">🥬 Shredded Cabbage</span>
+          <span class="chip chip-green">🌿 Edamame</span>
+          <span class="chip chip-orange">🥕 Carrots</span>
+          <span class="chip chip-orange">🍊 Mandarin</span>
+          <span class="chip chip-yellow">🥟 Crispy Wontons</span>
+          <span class="chip chip-green">🌱 Spring Onions</span>
+          <span class="chip chip-yellow">🥜 Almonds</span>
+        </div>
+        <div class="card-dressing">
+          <strong>🫙 House Sesame-Ginger Dressing</strong>
+          Sesame oil · Soy sauce · Rice vinegar · Fresh ginger · Garlic · Honey — silky smooth from Thermomix
+        </div>
+        <div class="card-health">
+          <span class="health-chip">💚 Plant-based protein</span>
+          <span class="health-chip">💚 Anti-inflammatory</span>
+          <span class="health-chip">💚 Gut-friendly</span>
+        </div>
+        <a href="#order" class="card-order">Order This Bowl →</a>
+      </div>
+    </div>
+
+    <!-- Southwest -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🌶️</div>
+        <div class="card-name">Southwest Bowl</div>
+        <div class="card-tagline">"Smoky, creamy &amp; boldly satisfying"</div>
+        <div class="card-price">$13</div>
+      </div>
+      <div class="card-body">
+        <div class="chip-group">
+          <span class="chip chip-green">🥬 Romaine</span>
+          <span class="chip chip-purple">🫘 Black Beans</span>
+          <span class="chip chip-yellow">🌽 Corn</span>
+          <span class="chip chip-green">🥑 Avocado</span>
+          <span class="chip chip-red">🍅 Cherry Tomatoes</span>
+          <span class="chip chip-green">🌿 Cilantro</span>
+          <span class="chip chip-orange">🫓 Tortilla Strips</span>
+        </div>
+        <div class="card-dressing">
+          <strong>🌶️ House Chipotle-Lime Dressing</strong>
+          Chipotle in adobo · Fresh lime · Greek yogurt · Cumin · Honey — blended in Thermomix
+        </div>
+        <div class="card-health">
+          <span class="health-chip">💚 High protein</span>
+          <span class="health-chip">💚 Healthy fats</span>
+          <span class="health-chip">💚 Rich in vitamins</span>
+        </div>
+        <a href="#order" class="card-order">Order This Bowl →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>Made with love by Sare</h2>
+      <p>Every bowl is assembled fresh to order in our home kitchen in Columbus, Ohio — never pre-made, never sitting on a shelf.</p>
+      <p>Sare uses her <strong>Thermomix</strong> to emulsify every dressing to silky perfection — no bottled sauces, no shortcuts.</p>
+      <div class="about-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🌿</div>
+          <div class="pillar-text">
+            <strong>No preservatives</strong>
+            <span>Real ingredients, nothing artificial</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">⚡</div>
+          <div class="pillar-text">
+            <strong>Made to order</strong>
+            <span>Prepped fresh when you order</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🏠</div>
+          <div class="pillar-text">
+            <strong>Local &amp; home-based</strong>
+            <span>Your neighbor, not a chain</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🤖</div>
+          <div class="pillar-text">
+            <strong>Thermomix dressings</strong>
+            <span>Perfectly emulsified every time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="big-emoji">👩‍🍳</div>
+      <h3>Hi, I'm Sare!</h3>
+      <p>Home chef &amp; salad enthusiast in Columbus, OH. I believe eating healthy should be delicious, not boring.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <p class="section-label">Easy &amp; Fast</p>
+  <h2 class="section-title">How to Order</h2>
+  <div class="order-inner">
+    <div class="order-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <strong>Pick a Bowl</strong>
+        <span>Choose from our menu above</span>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <strong>Text Sare</strong>
+        <span>Send your order &amp; address</span>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <strong>Pay via Venmo</strong>
+        <span>@kemalaydin — quick &amp; easy</span>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <strong>Enjoy!</strong>
+        <span>Fresh bowl at your door</span>
+      </div>
+    </div>
+
+    <a href="https://venmo.com/kemalaydin" target="_blank" class="venmo-btn">
+      💙 Pay on Venmo @kemalaydin
+    </a>
+    <p class="order-note">Columbus, OH deliveries only · Same-day orders by noon · Cash also accepted</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>🥗 Salad Bowls by Sare</strong></p>
+  <p>Columbus, Ohio · Home-made · No preservatives</p>
+  <p style="margin-top:.8rem;">
+    Pay via <a href="https://venmo.com/kemalaydin" target="_blank">Venmo @kemalaydin</a>
+  </p>
+  <p style="margin-top:1rem; font-size:.78rem; opacity:.5;">© 2025 Salad Bowls by Sare. Made with 💚 in Columbus.</p>
+</footer>
+
+</body>
+</html>
