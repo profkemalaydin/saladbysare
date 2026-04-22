@@ -248,11 +248,18 @@
     .about-visual {
       background: #fff;
       border-radius: var(--radius);
-      padding: 2rem;
+      padding: 1.5rem;
       text-align: center;
       box-shadow: var(--shadow);
     }
-    .about-visual .big-emoji { font-size: 5rem; }
+    .about-photo {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
     .about-visual h3 { font-size: 1.1rem; font-weight: 700; color: var(--green-deep); margin: .8rem 0 .4rem; }
     .about-visual p { font-size: .85rem; color: var(--text-light); }
 
@@ -494,7 +501,7 @@
       </div>
     </div>
     <div class="about-visual">
-      <div class="big-emoji">👩‍🍳</div>
+      <img src="sare.png" alt="Sare" class="about-photo" />
       <h3>Hi, I'm Sare!</h3>
       <p>Home chef &amp; salad enthusiast in Columbus, OH. I believe eating healthy should be delicious, not boring.</p>
     </div>
