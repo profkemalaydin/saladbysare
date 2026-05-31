@@ -7,19 +7,42 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
+      /* ── Theme variables (changed by swatch picker) ── */
+      --primary:         #5C3D24;
+      --primary-mid:     #8B5E3C;
+      --primary-light:   #F5EADE;
+      --primary-light-2: #eeddd0;
+      --hero-to:         #5A8040;
+
+      /* ── Static palette ───────────────────────────── */
       --pistachio:       #4D7C3A;
       --pistachio-mid:   #7BA05A;
       --pistachio-light: #EAF2DC;
       --cream:           #FDF8F0;
-      --brown:           #8B5E3C;
-      --brown-dark:      #5C3D24;
-      --brown-light:     #F5EADE;
       --pink:            #C96A8A;
       --pink-light:      #FAE8F2;
       --text:            #2C1810;
       --text-light:      #6B4E3D;
       --radius:          16px;
       --shadow:          0 4px 24px rgba(92,61,36,.12);
+    }
+
+    /* ── Green theme ──────────────────────────────── */
+    [data-theme="green"] {
+      --primary:         #2d5c1a;
+      --primary-mid:     #4D7C3A;
+      --primary-light:   #EAF2DC;
+      --primary-light-2: #d4ecbc;
+      --hero-to:         #7BA05A;
+    }
+
+    /* ── Dust Pink theme ──────────────────────────── */
+    [data-theme="pink"] {
+      --primary:         #7a2848;
+      --primary-mid:     #b85070;
+      --primary-light:   #FAE8F2;
+      --primary-light-2: #f4d0e0;
+      --hero-to:         #d4789a;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -39,22 +62,22 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: .9rem 2rem;
     }
-    .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--brown-dark); }
+    .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--primary); }
     .nav-brand span { color: var(--pistachio); }
     .nav-links { display: flex; gap: 1.8rem; }
     .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text-light); transition: color .2s; }
-    .nav-links a:hover { color: var(--brown-dark); }
+    .nav-links a:hover { color: var(--primary); }
     .nav-order {
-      background: var(--brown-dark); color: #fff;
+      background: var(--primary); color: #fff;
       padding: .5rem 1.2rem; border-radius: 999px;
       font-size: .85rem; font-weight: 600;
       transition: background .2s;
     }
-    .nav-order:hover { background: var(--brown); }
+    .nav-order:hover { background: var(--primary-mid); }
 
     /* ── Hero ─────────────────────────────────────── */
     .hero {
-      background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown) 55%, #5A8040 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 55%, var(--hero-to) 100%);
       color: #fff;
       text-align: center;
       padding: 5rem 1.5rem 4rem;
@@ -93,7 +116,7 @@
     }
     .hero-cta {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: #fff; color: var(--brown-dark);
+      background: #fff; color: var(--primary);
       font-weight: 700; font-size: 1rem;
       padding: .85rem 2rem; border-radius: 999px;
       box-shadow: 0 6px 24px rgba(0,0,0,.2);
@@ -127,7 +150,7 @@
       text-align: center;
       font-size: clamp(1.7rem, 4vw, 2.4rem);
       font-weight: 800;
-      color: var(--brown-dark);
+      color: var(--primary);
       margin-bottom: .6rem;
     }
     .section-sub {
@@ -168,15 +191,15 @@
       padding: 1.6rem 1.6rem 1.2rem;
     }
     .card-header-pistachio { background: linear-gradient(135deg, var(--pistachio-light) 0%, #d4ecbc 100%); }
-    .card-header-brown     { background: linear-gradient(135deg, var(--brown-light) 0%, #eeddd0 100%); }
+    .card-header-brown     { background: linear-gradient(135deg, var(--primary-light) 0%, #eeddd0 100%); }
     .card-header-pink      { background: linear-gradient(135deg, var(--pink-light) 0%, #f4d0e0 100%); }
     .card-header-cream     { background: linear-gradient(135deg, #fdf0dc 0%, #f5e4c4 100%); }
     .card-emoji { font-size: 2.6rem; margin-bottom: .5rem; }
-    .card-name { font-size: 1.2rem; font-weight: 800; color: var(--brown-dark); }
+    .card-name { font-size: 1.2rem; font-weight: 800; color: var(--primary); }
     .card-tagline { font-size: .88rem; color: var(--text-light); margin-top: .2rem; font-style: italic; }
     .card-price {
       font-size: 1.5rem; font-weight: 800;
-      color: var(--brown);
+      color: var(--primary-mid);
       margin-top: .5rem;
     }
     .badge-popular {
@@ -195,7 +218,7 @@
       white-space: nowrap;
     }
     .chip-green  { background: var(--pistachio-light); color: var(--pistachio); }
-    .chip-brown  { background: var(--brown-light); color: var(--brown-dark); }
+    .chip-brown  { background: var(--primary-light); color: var(--primary); }
     .chip-pink   { background: var(--pink-light); color: var(--pink); }
     .chip-gold   { background: #fff8dc; color: #8a6200; }
     .chip-cream  { background: #f5f0e8; color: #5c4030; }
@@ -211,8 +234,8 @@
     .card-features { display: flex; flex-wrap: wrap; gap: .35rem; }
     .feature-chip {
       font-size: .75rem;
-      background: var(--brown-light);
-      color: var(--brown-dark);
+      background: var(--primary-light);
+      color: var(--primary);
       padding: .2rem .6rem;
       border-radius: 999px;
       font-weight: 500;
@@ -221,14 +244,14 @@
       margin-top: auto;
       display: block;
       text-align: center;
-      background: var(--brown-dark); color: #fff;
+      background: var(--primary); color: #fff;
       padding: .75rem;
       border-radius: 10px;
       font-weight: 700;
       font-size: .95rem;
       transition: background .2s;
     }
-    .card-order:hover { background: var(--brown); }
+    .card-order:hover { background: var(--primary-mid); }
 
     /* ── Drinks Row ───────────────────────────────── */
     .drinks-row {
@@ -258,9 +281,9 @@
     }
     .drink-info { padding: 1.2rem 1.2rem 1.5rem; }
     .drink-emoji { font-size: 2.2rem; margin-bottom: .5rem; }
-    .drink-name { font-size: 1rem; font-weight: 800; color: var(--brown-dark); }
+    .drink-name { font-size: 1rem; font-weight: 800; color: var(--primary); }
     .drink-desc { font-size: .82rem; color: var(--text-light); margin-top: .25rem; }
-    .drink-price { font-size: 1.2rem; font-weight: 800; color: var(--brown); margin-top: .4rem; }
+    .drink-price { font-size: 1.2rem; font-weight: 800; color: var(--primary-mid); margin-top: .4rem; }
 
     /* ── Seasonal Banner ──────────────────────────── */
     .seasonal-banner {
@@ -275,12 +298,12 @@
       gap: 1.2rem;
     }
     .seasonal-icon { font-size: 2rem; flex-shrink: 0; }
-    .seasonal-text strong { font-size: 1rem; color: var(--brown-dark); display: block; margin-bottom: .25rem; }
+    .seasonal-text strong { font-size: 1rem; color: var(--primary); display: block; margin-bottom: .25rem; }
     .seasonal-text p { font-size: .87rem; color: var(--text-light); }
 
     /* ── About ────────────────────────────────────── */
     #about {
-      background: linear-gradient(135deg, var(--brown-light) 0%, #f0e2d5 100%);
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-light-2) 100%);
     }
     .about-inner {
       max-width: 800px;
@@ -290,7 +313,7 @@
       gap: 3rem;
       align-items: center;
     }
-    .about-text h2 { font-size: 1.9rem; font-weight: 800; color: var(--brown-dark); margin-bottom: 1rem; }
+    .about-text h2 { font-size: 1.9rem; font-weight: 800; color: var(--primary); margin-bottom: 1rem; }
     .about-text p { color: var(--text-light); font-size: .96rem; margin-bottom: 1rem; }
     .about-pillars { display: flex; flex-direction: column; gap: .7rem; margin-top: 1.2rem; }
     .pillar {
@@ -318,7 +341,7 @@
       display: block;
       margin: 0 auto;
     }
-    .about-visual h3 { font-size: 1.1rem; font-weight: 700; color: var(--brown-dark); margin: .8rem 0 .4rem; }
+    .about-visual h3 { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin: .8rem 0 .4rem; }
     .about-visual p { font-size: .85rem; color: var(--text-light); }
 
     /* ── Order ────────────────────────────────────── */
@@ -336,14 +359,14 @@
     }
     .step {
       flex: 1; min-width: 140px;
-      background: var(--brown-light);
+      background: var(--primary-light);
       border-radius: 12px;
       padding: 1.2rem 1rem;
       text-align: center;
     }
     .step-num {
       width: 32px; height: 32px;
-      background: var(--brown-dark); color: #fff;
+      background: var(--primary); color: #fff;
       border-radius: 50%;
       font-size: .85rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
@@ -353,7 +376,7 @@
     .step span { font-size: .8rem; color: var(--text-light); }
     .text-btn {
       display: inline-flex; align-items: center; gap: .6rem;
-      background: var(--brown-dark); color: #fff;
+      background: var(--primary); color: #fff;
       font-weight: 700; font-size: 1rem;
       padding: .85rem 2rem; border-radius: 999px;
       box-shadow: 0 4px 20px rgba(92,61,36,.3);
@@ -373,7 +396,7 @@
 
     /* ── Footer ───────────────────────────────────── */
     footer {
-      background: var(--brown-dark);
+      background: var(--primary);
       color: rgba(255,255,255,.8);
       text-align: center;
       padding: 2.5rem 1.5rem;
@@ -381,6 +404,22 @@
     footer strong { color: #fff; }
     footer p { font-size: .88rem; margin: .3rem 0; }
     footer a { color: #c8e8a0; }
+
+    /* ── Color Swatches ──────────────────────────── */
+    .color-swatches {
+      display: flex; gap: .45rem; align-items: center;
+    }
+    .swatch {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      border: 2.5px solid transparent;
+      cursor: pointer;
+      outline: none;
+      transition: transform .15s, border-color .2s;
+      padding: 0;
+    }
+    .swatch:hover { transform: scale(1.25); }
+    .swatch.active { border-color: rgba(0,0,0,.35); transform: scale(1.15); }
 
     /* ── Responsive ───────────────────────────────── */
     @media (max-width: 640px) {
@@ -399,6 +438,11 @@
     <a href="#menu">Menu</a>
     <a href="#about">About</a>
     <a href="#order">Order</a>
+  </div>
+  <div class="color-swatches">
+    <button class="swatch active" data-theme="brown" style="background:#5C3D24" title="Brown"></button>
+    <button class="swatch"        data-theme="green" style="background:#4D7C3A" title="Green"></button>
+    <button class="swatch"        data-theme="pink"  style="background:#C96A8A" title="Dust Pink"></button>
   </div>
   <a href="#order" class="nav-order">Order Now</a>
 </nav>
@@ -672,5 +716,20 @@
   <p style="margin-top:1rem; font-size:.78rem; opacity:.5;">© 2025 Sweets By Sare. Made with 🍯 in Columbus.</p>
 </footer>
 
+<script>
+  const swatches = document.querySelectorAll('.swatch');
+  function setTheme(theme) {
+    if (theme === 'brown') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+    swatches.forEach(b => b.classList.toggle('active', b.dataset.theme === theme));
+    localStorage.setItem('sbs-theme', theme);
+  }
+  swatches.forEach(btn => btn.addEventListener('click', () => setTheme(btn.dataset.theme)));
+  const saved = localStorage.getItem('sbs-theme');
+  if (saved) setTheme(saved);
+</script>
 </body>
 </html>
