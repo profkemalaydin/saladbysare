@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salad Bowls by Sare — Columbus, OH</title>
+  <title>Sweets By Sare — Handmade Turkish Sweets · Columbus, OH</title>
   <style>
-    /* ── Reset & Base ─────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --green-deep:   #1a6b3c;
-      --green-mid:    #2d9b5a;
-      --green-light:  #e8f7ee;
-      --green-accent: #4caf78;
-      --cream:        #fafdf7;
-      --text:         #1c2b1e;
-      --text-light:   #4a6552;
-      --radius:       16px;
-      --shadow:       0 4px 24px rgba(26,107,60,.10);
+      --pistachio:       #4D7C3A;
+      --pistachio-mid:   #7BA05A;
+      --pistachio-light: #EAF2DC;
+      --cream:           #FDF8F0;
+      --brown:           #8B5E3C;
+      --brown-dark:      #5C3D24;
+      --brown-light:     #F5EADE;
+      --pink:            #C96A8A;
+      --pink-light:      #FAE8F2;
+      --text:            #2C1810;
+      --text-light:      #6B4E3D;
+      --radius:          16px;
+      --shadow:          0 4px 24px rgba(92,61,36,.12);
     }
     html { scroll-behavior: smooth; }
     body {
@@ -30,28 +33,28 @@
     /* ── Nav ──────────────────────────────────────── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.94);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid #d4edda;
+      border-bottom: 1px solid #e8d8cc;
       display: flex; align-items: center; justify-content: space-between;
       padding: .9rem 2rem;
     }
-    .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--green-deep); }
-    .nav-brand span { color: var(--green-accent); }
+    .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--brown-dark); }
+    .nav-brand span { color: var(--pistachio); }
     .nav-links { display: flex; gap: 1.8rem; }
     .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text-light); transition: color .2s; }
-    .nav-links a:hover { color: var(--green-deep); }
+    .nav-links a:hover { color: var(--brown-dark); }
     .nav-order {
-      background: var(--green-deep); color: #fff;
+      background: var(--brown-dark); color: #fff;
       padding: .5rem 1.2rem; border-radius: 999px;
       font-size: .85rem; font-weight: 600;
       transition: background .2s;
     }
-    .nav-order:hover { background: var(--green-mid); }
+    .nav-order:hover { background: var(--brown); }
 
     /* ── Hero ─────────────────────────────────────── */
     .hero {
-      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 60%, #5bbf82 100%);
+      background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown) 55%, #5A8040 100%);
       color: #fff;
       text-align: center;
       padding: 5rem 1.5rem 4rem;
@@ -61,7 +64,7 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M40 40m-30 0a30 30 0 1 1 60 0a30 30 0 1 1 -60 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       pointer-events: none;
     }
     .hero-badge {
@@ -81,7 +84,7 @@
       line-height: 1.15;
       margin-bottom: 1rem;
     }
-    .hero h1 em { font-style: normal; color: #a8f0c0; }
+    .hero h1 em { font-style: normal; color: #c8e8a0; }
     .hero p {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       max-width: 560px;
@@ -90,13 +93,13 @@
     }
     .hero-cta {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: #fff; color: var(--green-deep);
+      background: #fff; color: var(--brown-dark);
       font-weight: 700; font-size: 1rem;
       padding: .85rem 2rem; border-radius: 999px;
-      box-shadow: 0 6px 24px rgba(0,0,0,.18);
+      box-shadow: 0 6px 24px rgba(0,0,0,.2);
       transition: transform .2s, box-shadow .2s;
     }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,.22); }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,.25); }
     .hero-sub {
       margin-top: 1.5rem;
       font-size: .85rem;
@@ -117,14 +120,14 @@
       font-weight: 700;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--green-mid);
+      color: var(--pistachio-mid);
       margin-bottom: .6rem;
     }
     .section-title {
       text-align: center;
       font-size: clamp(1.7rem, 4vw, 2.4rem);
       font-weight: 800;
-      color: var(--green-deep);
+      color: var(--brown-dark);
       margin-bottom: .6rem;
     }
     .section-sub {
@@ -135,18 +138,18 @@
       font-size: .95rem;
     }
 
-    /* ── Menu ─────────────────────────────────────── */
+    /* ── Menu Cards ───────────────────────────────── */
     #menu { background: #fff; }
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 1.5rem;
-      max-width: 1080px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     .card {
       background: var(--cream);
-      border: 1.5px solid #d4edda;
+      border: 1.5px solid #e8d8cc;
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
@@ -154,22 +157,25 @@
       transition: transform .25s, box-shadow .25s;
       position: relative;
     }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(26,107,60,.15); }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(92,61,36,.18); }
     .card-header {
       padding: 1.6rem 1.6rem 1.2rem;
-      background: linear-gradient(135deg, var(--green-light) 0%, #d0f0df 100%);
     }
+    .card-header-pistachio { background: linear-gradient(135deg, var(--pistachio-light) 0%, #d4ecbc 100%); }
+    .card-header-brown     { background: linear-gradient(135deg, var(--brown-light) 0%, #eeddd0 100%); }
+    .card-header-pink      { background: linear-gradient(135deg, var(--pink-light) 0%, #f4d0e0 100%); }
+    .card-header-cream     { background: linear-gradient(135deg, #fdf0dc 0%, #f5e4c4 100%); }
     .card-emoji { font-size: 2.6rem; margin-bottom: .5rem; }
-    .card-name { font-size: 1.2rem; font-weight: 800; color: var(--green-deep); }
+    .card-name { font-size: 1.2rem; font-weight: 800; color: var(--brown-dark); }
     .card-tagline { font-size: .88rem; color: var(--text-light); margin-top: .2rem; font-style: italic; }
     .card-price {
       font-size: 1.5rem; font-weight: 800;
-      color: var(--green-mid);
+      color: var(--brown);
       margin-top: .5rem;
     }
     .badge-popular {
       position: absolute; top: 1rem; right: 1rem;
-      background: #ff8c42; color: #fff;
+      background: var(--pink); color: #fff;
       font-size: .72rem; font-weight: 700;
       padding: .25rem .7rem; border-radius: 999px;
       letter-spacing: .04em;
@@ -182,27 +188,25 @@
       border-radius: 999px;
       white-space: nowrap;
     }
-    .chip-green  { background: #d4f7e0; color: #1a6b3c; }
-    .chip-red    { background: #ffe5e5; color: #b33; }
-    .chip-orange { background: #fff0db; color: #a05a00; }
-    .chip-purple { background: #ede5f7; color: #5b3d8a; }
-    .chip-blue   { background: #e5f0ff; color: #1a4b8a; }
-    .chip-pink   { background: #ffe5f0; color: #8a1a4b; }
-    .chip-yellow { background: #fffde5; color: #8a7200; }
-    .card-dressing {
+    .chip-green  { background: var(--pistachio-light); color: var(--pistachio); }
+    .chip-brown  { background: var(--brown-light); color: var(--brown-dark); }
+    .chip-pink   { background: var(--pink-light); color: var(--pink); }
+    .chip-gold   { background: #fff8dc; color: #8a6200; }
+    .chip-cream  { background: #f5f0e8; color: #5c4030; }
+    .card-note {
       font-size: .85rem;
       color: var(--text-light);
       background: #fff;
-      border-left: 3px solid var(--green-accent);
+      border-left: 3px solid var(--pistachio-mid);
       padding: .6rem .9rem;
       border-radius: 0 8px 8px 0;
     }
-    .card-dressing strong { display: block; color: var(--text); font-size: .8rem; margin-bottom: .25rem; }
-    .card-health { display: flex; flex-wrap: wrap; gap: .35rem; }
-    .health-chip {
+    .card-note strong { display: block; color: var(--text); font-size: .8rem; margin-bottom: .25rem; }
+    .card-features { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .feature-chip {
       font-size: .75rem;
-      background: var(--green-light);
-      color: var(--green-deep);
+      background: var(--brown-light);
+      color: var(--brown-dark);
       padding: .2rem .6rem;
       border-radius: 999px;
       font-weight: 500;
@@ -211,18 +215,59 @@
       margin-top: auto;
       display: block;
       text-align: center;
-      background: var(--green-deep); color: #fff;
+      background: var(--brown-dark); color: #fff;
       padding: .75rem;
       border-radius: 10px;
       font-weight: 700;
       font-size: .95rem;
       transition: background .2s;
     }
-    .card-order:hover { background: var(--green-mid); }
+    .card-order:hover { background: var(--brown); }
+
+    /* ── Drinks Row ───────────────────────────────── */
+    .drinks-row {
+      display: flex;
+      gap: 1.2rem;
+      max-width: 600px;
+      margin: 2rem auto 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .drink-card {
+      flex: 1; min-width: 200px;
+      background: linear-gradient(135deg, #fdf0dc 0%, #f5e4c4 100%);
+      border: 1.5px solid #e8d8cc;
+      border-radius: var(--radius);
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform .25s;
+    }
+    .drink-card:hover { transform: translateY(-4px); }
+    .drink-emoji { font-size: 2.2rem; margin-bottom: .5rem; }
+    .drink-name { font-size: 1rem; font-weight: 800; color: var(--brown-dark); }
+    .drink-desc { font-size: .82rem; color: var(--text-light); margin-top: .25rem; }
+    .drink-price { font-size: 1.2rem; font-weight: 800; color: var(--brown); margin-top: .4rem; }
+
+    /* ── Seasonal Banner ──────────────────────────── */
+    .seasonal-banner {
+      max-width: 700px;
+      margin: 2.5rem auto 0;
+      background: linear-gradient(135deg, var(--pink-light) 0%, #f8dcea 100%);
+      border: 1.5px solid #e8c4d8;
+      border-radius: var(--radius);
+      padding: 1.4rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .seasonal-icon { font-size: 2rem; flex-shrink: 0; }
+    .seasonal-text strong { font-size: 1rem; color: var(--brown-dark); display: block; margin-bottom: .25rem; }
+    .seasonal-text p { font-size: .87rem; color: var(--text-light); }
 
     /* ── About ────────────────────────────────────── */
     #about {
-      background: linear-gradient(135deg, var(--green-light) 0%, #d0f0df 100%);
+      background: linear-gradient(135deg, var(--brown-light) 0%, #f0e2d5 100%);
     }
     .about-inner {
       max-width: 800px;
@@ -232,7 +277,7 @@
       gap: 3rem;
       align-items: center;
     }
-    .about-text h2 { font-size: 1.9rem; font-weight: 800; color: var(--green-deep); margin-bottom: 1rem; }
+    .about-text h2 { font-size: 1.9rem; font-weight: 800; color: var(--brown-dark); margin-bottom: 1rem; }
     .about-text p { color: var(--text-light); font-size: .96rem; margin-bottom: 1rem; }
     .about-pillars { display: flex; flex-direction: column; gap: .7rem; margin-top: 1.2rem; }
     .pillar {
@@ -240,7 +285,7 @@
       background: #fff;
       border-radius: 10px;
       padding: .8rem 1rem;
-      box-shadow: 0 2px 10px rgba(26,107,60,.07);
+      box-shadow: 0 2px 10px rgba(92,61,36,.07);
     }
     .pillar-icon { font-size: 1.4rem; flex-shrink: 0; }
     .pillar-text strong { display: block; font-size: .9rem; color: var(--text); }
@@ -260,7 +305,7 @@
       display: block;
       margin: 0 auto;
     }
-    .about-visual h3 { font-size: 1.1rem; font-weight: 700; color: var(--green-deep); margin: .8rem 0 .4rem; }
+    .about-visual h3 { font-size: 1.1rem; font-weight: 700; color: var(--brown-dark); margin: .8rem 0 .4rem; }
     .about-visual p { font-size: .85rem; color: var(--text-light); }
 
     /* ── Order ────────────────────────────────────── */
@@ -278,14 +323,14 @@
     }
     .step {
       flex: 1; min-width: 140px;
-      background: var(--green-light);
+      background: var(--brown-light);
       border-radius: 12px;
       padding: 1.2rem 1rem;
       text-align: center;
     }
     .step-num {
       width: 32px; height: 32px;
-      background: var(--green-deep); color: #fff;
+      background: var(--brown-dark); color: #fff;
       border-radius: 50%;
       font-size: .85rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
@@ -295,13 +340,13 @@
     .step span { font-size: .8rem; color: var(--text-light); }
     .text-btn {
       display: inline-flex; align-items: center; gap: .6rem;
-      background: var(--green-deep); color: #fff;
+      background: var(--brown-dark); color: #fff;
       font-weight: 700; font-size: 1rem;
       padding: .85rem 2rem; border-radius: 999px;
-      box-shadow: 0 4px 20px rgba(26,107,60,.3);
+      box-shadow: 0 4px 20px rgba(92,61,36,.3);
       transition: transform .2s, box-shadow .2s;
     }
-    .text-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,107,60,.4); }
+    .text-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(92,61,36,.4); }
     .venmo-btn {
       display: inline-flex; align-items: center; gap: .6rem;
       background: #008CFF; color: #fff;
@@ -315,14 +360,14 @@
 
     /* ── Footer ───────────────────────────────────── */
     footer {
-      background: var(--green-deep);
+      background: var(--brown-dark);
       color: rgba(255,255,255,.8);
       text-align: center;
       padding: 2.5rem 1.5rem;
     }
     footer strong { color: #fff; }
     footer p { font-size: .88rem; margin: .3rem 0; }
-    footer a { color: #a8f0c0; }
+    footer a { color: #c8e8a0; }
 
     /* ── Responsive ───────────────────────────────── */
     @media (max-width: 640px) {
@@ -336,7 +381,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">🥗 <span>Salad Bowls</span> by Sare</div>
+  <div class="nav-brand">🍯 <span>Sweets</span> By Sare</div>
   <div class="nav-links">
     <a href="#menu">Menu</a>
     <a href="#about">About</a>
@@ -347,119 +392,166 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-badge">📍 Columbus, OH · Home-made & Fresh</div>
-  <h1>Fresh Salad Bowls<br /><em>Delivered to Your Door</em></h1>
-  <p>Hand-crafted salad bowls made with locally sourced ingredients and Thermomix-emulsified dressings. No preservatives. Ever.</p>
+  <div class="hero-badge">📍 Columbus, OH · Handmade &amp; Traditional</div>
+  <h1>Handmade Turkish Sweets<br /><em>Delivered to Your Door</em></h1>
+  <p>Authentic baklava, lokum, cookies and halva — made fresh at home with traditional recipes passed down through generations.</p>
   <a href="#menu" class="hero-cta">
-    🥗 See the Menu
+    🍯 See the Menu
   </a>
-  <p class="hero-sub">Order by text · Pay via Venmo · Same-day delivery</p>
-  <div class="hero-emojis">🥬 🍅 🥑 🫒 🥕 🧀 🌽</div>
+  <p class="hero-sub">Order by text · Pay via Venmo · Columbus delivery</p>
+  <div class="hero-emojis">🥮 🍯 🌹 🍪 🫖 ☕ 🌿</div>
 </section>
 
 <!-- MENU -->
 <section id="menu">
-  <p class="section-label">Fresh Every Day</p>
-  <h2 class="section-title">This Week's Bowls</h2>
-  <p class="section-sub">All bowls made to order with fresh ingredients and house-made dressings.</p>
+  <p class="section-label">Made Fresh at Home</p>
+  <h2 class="section-title">Turkish Sweets Menu</h2>
+  <p class="section-sub">Every item handmade in small batches — no preservatives, no shortcuts, real ingredients only.</p>
 
   <div class="cards">
 
-    <!-- Mediterranean -->
+    <!-- Baklava -->
     <div class="card">
-      <div class="badge-popular">⭐ Most Popular</div>
-      <div class="card-header">
-        <div class="card-emoji">🫒</div>
-        <div class="card-name">Mediterranean Bowl</div>
-        <div class="card-tagline">"Light, bright &amp; incredibly satisfying"</div>
-        <div class="card-price">$12</div>
+      <div class="badge-popular">⭐ Fan Favorite</div>
+      <div class="card-header card-header-pistachio">
+        <div class="card-emoji">🥮</div>
+        <div class="card-name">Baklava</div>
+        <div class="card-tagline">"Crispy layers, honey, pistachios"</div>
+        <div class="card-price">$18 / box</div>
       </div>
       <div class="card-body">
         <div class="chip-group">
-          <span class="chip chip-green">🥬 Romaine</span>
-          <span class="chip chip-green">🥒 Cucumber</span>
-          <span class="chip chip-red">🍅 Cherry Tomatoes</span>
-          <span class="chip chip-purple">🫒 Kalamata Olives</span>
-          <span class="chip chip-blue">🧀 Feta Cheese</span>
-          <span class="chip chip-pink">🧅 Red Onion</span>
-          <span class="chip chip-yellow">🫘 Chickpeas</span>
+          <span class="chip chip-green">🌿 Phyllo Dough</span>
+          <span class="chip chip-green">🫘 Pistachios</span>
+          <span class="chip chip-gold">🍯 Honey Syrup</span>
+          <span class="chip chip-cream">🧈 Butter</span>
+          <span class="chip chip-brown">🌰 Walnuts</span>
         </div>
-        <div class="card-dressing">
-          <strong>🍋 House Lemon-Herb Dressing</strong>
-          Honey · Dijon · Fresh lemon · Olive oil · Oregano — emulsified in Thermomix
+        <div class="card-note">
+          <strong>📦 12 pieces per box</strong>
+          Rich, flaky layers soaked in fragrant honey syrup — made with real butter and freshly ground pistachios.
         </div>
-        <div class="card-health">
-          <span class="health-chip">💚 High fiber</span>
-          <span class="health-chip">💚 Protein-rich</span>
-          <span class="health-chip">💚 Heart-healthy fats</span>
+        <div class="card-features">
+          <span class="feature-chip">📦 Long shelf life</span>
+          <span class="feature-chip">🎁 Gift-ready</span>
+          <span class="feature-chip">✋ Handmade</span>
         </div>
-        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20this%20bowl." class="card-order">📱 Text to Order →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Baklava." class="card-order">📱 Text to Order →</a>
       </div>
     </div>
 
-    <!-- Asian Sesame -->
+    <!-- Anne Kurabiyesi -->
     <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🥢</div>
-        <div class="card-name">Asian Sesame Bowl</div>
-        <div class="card-tagline">"Crunchy, nutty &amp; full of umami"</div>
-        <div class="card-price">$13</div>
+      <div class="card-header card-header-brown">
+        <div class="card-emoji">🍪</div>
+        <div class="card-name">Anne Kurabiyesi</div>
+        <div class="card-tagline">"Mom's butter cookies — melt in your mouth"</div>
+        <div class="card-price">$14 / box</div>
       </div>
       <div class="card-body">
         <div class="chip-group">
-          <span class="chip chip-green">🥬 Shredded Cabbage</span>
-          <span class="chip chip-green">🌿 Edamame</span>
-          <span class="chip chip-orange">🥕 Carrots</span>
-          <span class="chip chip-orange">🍊 Mandarin</span>
-          <span class="chip chip-yellow">🥟 Crispy Wontons</span>
-          <span class="chip chip-green">🌱 Spring Onions</span>
-          <span class="chip chip-yellow">🥜 Almonds</span>
+          <span class="chip chip-cream">🧈 Butter</span>
+          <span class="chip chip-cream">🌾 Flour</span>
+          <span class="chip chip-gold">✨ Powdered Sugar</span>
+          <span class="chip chip-gold">🍦 Vanilla</span>
+          <span class="chip chip-green">🌿 Sesame (optional)</span>
         </div>
-        <div class="card-dressing">
-          <strong>🫙 House Sesame-Ginger Dressing</strong>
-          Sesame oil · Soy sauce · Rice vinegar · Fresh ginger · Garlic · Honey — silky smooth from Thermomix
+        <div class="card-note">
+          <strong>📦 16 cookies per box</strong>
+          Traditional Turkish shortbread — buttery, crumbly, and delicately sweet. A timeless classic.
         </div>
-        <div class="card-health">
-          <span class="health-chip">💚 Plant-based protein</span>
-          <span class="health-chip">💚 Anti-inflammatory</span>
-          <span class="health-chip">💚 Gut-friendly</span>
+        <div class="card-features">
+          <span class="feature-chip">📦 Long shelf life</span>
+          <span class="feature-chip">🎁 Gift-ready</span>
+          <span class="feature-chip">🏡 Family recipe</span>
         </div>
-        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20this%20bowl." class="card-order">📱 Text to Order →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Anne%20Kurabiyesi." class="card-order">📱 Text to Order →</a>
       </div>
     </div>
 
-    <!-- Southwest -->
+    <!-- Lokum -->
     <div class="card">
-      <div class="card-header">
-        <div class="card-emoji">🌶️</div>
-        <div class="card-name">Southwest Bowl</div>
-        <div class="card-tagline">"Smoky, creamy &amp; boldly satisfying"</div>
-        <div class="card-price">$13</div>
+      <div class="card-header card-header-pink">
+        <div class="card-emoji">🌹</div>
+        <div class="card-name">Lokum (Turkish Delight)</div>
+        <div class="card-tagline">"Rose, pistachio &amp; classic flavors"</div>
+        <div class="card-price">$15 / box</div>
       </div>
       <div class="card-body">
         <div class="chip-group">
-          <span class="chip chip-green">🥬 Romaine</span>
-          <span class="chip chip-purple">🫘 Black Beans</span>
-          <span class="chip chip-yellow">🌽 Corn</span>
-          <span class="chip chip-green">🥑 Avocado</span>
-          <span class="chip chip-red">🍅 Cherry Tomatoes</span>
-          <span class="chip chip-green">🌿 Cilantro</span>
-          <span class="chip chip-orange">🫓 Tortilla Strips</span>
+          <span class="chip chip-pink">🌹 Rose Water</span>
+          <span class="chip chip-green">🫘 Pistachios</span>
+          <span class="chip chip-gold">🍬 Sugar</span>
+          <span class="chip chip-cream">⚗️ Cornstarch</span>
         </div>
-        <div class="card-dressing">
-          <strong>🌶️ House Chipotle-Lime Dressing</strong>
-          Chipotle in adobo · Fresh lime · Greek yogurt · Cumin · Honey — blended in Thermomix
+        <div class="card-note">
+          <strong>📦 20 pieces per box</strong>
+          Soft, fragrant, dusted in powdered sugar — available in rose, pistachio, and classic plain.
         </div>
-        <div class="card-health">
-          <span class="health-chip">💚 High protein</span>
-          <span class="health-chip">💚 Healthy fats</span>
-          <span class="health-chip">💚 Rich in vitamins</span>
+        <div class="card-features">
+          <span class="feature-chip">📦 Long shelf life</span>
+          <span class="feature-chip">🌿 Vegan</span>
+          <span class="feature-chip">🎁 Gift-ready</span>
         </div>
-        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20this%20bowl." class="card-order">📱 Text to Order →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Lokum." class="card-order">📱 Text to Order →</a>
+      </div>
+    </div>
+
+    <!-- Tahin Helvası -->
+    <div class="card">
+      <div class="card-header card-header-cream">
+        <div class="card-emoji">🍯</div>
+        <div class="card-name">Tahin Helvası</div>
+        <div class="card-tagline">"Sesame halva — rich &amp; traditional"</div>
+        <div class="card-price">$12 / pack</div>
+      </div>
+      <div class="card-body">
+        <div class="chip-group">
+          <span class="chip chip-brown">🌾 Tahini</span>
+          <span class="chip chip-gold">🍬 Sugar</span>
+          <span class="chip chip-gold">🍦 Vanilla</span>
+          <span class="chip chip-green">🫘 Pistachios (optional)</span>
+        </div>
+        <div class="card-note">
+          <strong>📦 300g per pack</strong>
+          Dense, nutty sesame halva with a crumbly texture. Pure comfort — pairs perfectly with Turkish tea.
+        </div>
+        <div class="card-features">
+          <span class="feature-chip">📦 Long shelf life</span>
+          <span class="feature-chip">💪 High energy</span>
+          <span class="feature-chip">🌿 Natural</span>
+        </div>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Tahin%20Helvas%C4%B1." class="card-order">📱 Text to Order →</a>
       </div>
     </div>
 
   </div>
+
+  <!-- Drinks -->
+  <div class="drinks-row">
+    <div class="drink-card">
+      <div class="drink-emoji">🫖</div>
+      <div class="drink-name">Turkish Tea</div>
+      <div class="drink-desc">Classic çay, steeped double-pot style</div>
+      <div class="drink-price">$3</div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-emoji">☕</div>
+      <div class="drink-name">Turkish Coffee</div>
+      <div class="drink-desc">Rich, dark, brewed in a cezve</div>
+      <div class="drink-price">$4</div>
+    </div>
+  </div>
+
+  <!-- Seasonal note -->
+  <div class="seasonal-banner">
+    <div class="seasonal-icon">🎉</div>
+    <div class="seasonal-text">
+      <strong>Seasonal &amp; Special Occasion Sweets</strong>
+      <p>Holiday trays, Eid assortments, wedding favors, and more — available for limited runs. Text Sare to ask about what's coming up!</p>
+    </div>
+  </div>
+
 </section>
 
 <!-- ABOUT -->
@@ -467,9 +559,30 @@
   <div class="about-inner">
     <div class="about-text">
       <h2>Made with love by Sare</h2>
-      <p>Every bowl is assembled fresh to order in our home kitchen in Columbus, Ohio — never pre-made, never sitting on a shelf.</p>
-      <p>Sare uses her <a href="https://shop.thermomix.com/consultant/140176/" target="_blank" style="color:var(--green-deep);text-decoration:underline;font-weight:700;">Thermomix</a> to emulsify every dressing to silky perfection — no bottled sauces, no shortcuts.</p>
+      <p>Every sweet is handcrafted in our home kitchen in Columbus, Ohio — using traditional Turkish recipes made fresh to order, never pre-packaged.</p>
+      <p>Sare grew up surrounded by these flavors and brings that same care to every box she makes. When you order, you're getting something real.</p>
       <div class="about-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🍯</div>
+          <div class="pillar-text">
+            <strong>Traditional recipes</strong>
+            <span>Authentic techniques passed down through family</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">✋</div>
+          <div class="pillar-text">
+            <strong>Handmade in small batches</strong>
+            <span>Never mass-produced, always fresh</span>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">📦</div>
+          <div class="pillar-text">
+            <strong>Long shelf life</strong>
+            <span>Ships well — perfect for gifting</span>
+          </div>
+        </div>
         <div class="pillar">
           <div class="pillar-icon">🌿</div>
           <div class="pillar-text">
@@ -477,33 +590,12 @@
             <span>Real ingredients, nothing artificial</span>
           </div>
         </div>
-        <div class="pillar">
-          <div class="pillar-icon">⚡</div>
-          <div class="pillar-text">
-            <strong>Made to order</strong>
-            <span>Prepped fresh when you order</span>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">🏠</div>
-          <div class="pillar-text">
-            <strong>Local &amp; home-based</strong>
-            <span>Your neighbor, not a chain</span>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">🤖</div>
-          <div class="pillar-text">
-            <strong>Thermomix dressings</strong>
-            <span>Perfectly emulsified every time</span>
-          </div>
-        </div>
       </div>
     </div>
     <div class="about-visual">
       <img src="sare.png" alt="Sare" class="about-photo" />
       <h3>Hi, I'm Sare!</h3>
-      <p>Home chef &amp; salad enthusiast in Columbus, OH. I believe eating healthy should be delicious, not boring.</p>
+      <p>Home baker &amp; Turkish sweets enthusiast in Columbus, OH. I want you to taste a little piece of my culture in every bite.</p>
     </div>
   </div>
 </section>
@@ -516,13 +608,13 @@
     <div class="order-steps">
       <div class="step">
         <div class="step-num">1</div>
-        <strong>Pick a Bowl</strong>
-        <span>Choose from our menu above</span>
+        <strong>Pick a Sweet</strong>
+        <span>Choose from the menu above</span>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <strong>Text Sare</strong>
-        <span>(346) 715-3432 · order &amp; address</span>
+        <span>(346) 715-3432 · item &amp; address</span>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -532,11 +624,11 @@
       <div class="step">
         <div class="step-num">4</div>
         <strong>Enjoy!</strong>
-        <span>Fresh bowl at your door</span>
+        <span>Fresh sweets at your door</span>
       </div>
     </div>
 
-    <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20a%20salad%20bowl." class="text-btn">
+    <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20some%20Turkish%20sweets." class="text-btn">
       📱 Text to Order · (346) 715-3432
     </a>
 
@@ -549,12 +641,12 @@
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>🥗 Salad Bowls by Sare</strong></p>
-  <p>Columbus, Ohio · Home-made · No preservatives</p>
+  <p><strong>🍯 Sweets By Sare</strong></p>
+  <p>Columbus, Ohio · Handmade Turkish Sweets · No Preservatives</p>
   <p style="margin-top:.8rem;">
     Pay via <a href="https://venmo.com/kemalaydin" target="_blank">Venmo @kemalaydin</a>
   </p>
-  <p style="margin-top:1rem; font-size:.78rem; opacity:.5;">© 2025 Salad Bowls by Sare. Made with 💚 in Columbus.</p>
+  <p style="margin-top:1rem; font-size:.78rem; opacity:.5;">© 2025 Sweets By Sare. Made with 🍯 in Columbus.</p>
 </footer>
 
 </body>
