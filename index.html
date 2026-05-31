@@ -158,6 +158,12 @@
       position: relative;
     }
     .card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(92,61,36,.18); }
+    .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
     .card-header {
       padding: 1.6rem 1.6rem 1.2rem;
     }
@@ -238,12 +244,19 @@
       background: linear-gradient(135deg, #fdf0dc 0%, #f5e4c4 100%);
       border: 1.5px solid #e8d8cc;
       border-radius: var(--radius);
-      padding: 1.5rem 1.2rem;
+      overflow: hidden;
       text-align: center;
       box-shadow: var(--shadow);
       transition: transform .25s;
     }
     .drink-card:hover { transform: translateY(-4px); }
+    .drink-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+    .drink-info { padding: 1.2rem 1.2rem 1.5rem; }
     .drink-emoji { font-size: 2.2rem; margin-bottom: .5rem; }
     .drink-name { font-size: 1rem; font-weight: 800; color: var(--brown-dark); }
     .drink-desc { font-size: .82rem; color: var(--text-light); margin-top: .25rem; }
@@ -413,6 +426,7 @@
     <!-- Baklava -->
     <div class="card">
       <div class="badge-popular">⭐ Fan Favorite</div>
+      <img class="card-img" src="baklava.jpg" alt="Baklava" loading="lazy" />
       <div class="card-header card-header-pistachio">
         <div class="card-emoji">🥮</div>
         <div class="card-name">Baklava</div>
@@ -442,6 +456,7 @@
 
     <!-- Anne Kurabiyesi -->
     <div class="card">
+      <img class="card-img" src="kurabiye.jpg" alt="Anne Kurabiyesi" loading="lazy" />
       <div class="card-header card-header-brown">
         <div class="card-emoji">🍪</div>
         <div class="card-name">Anne Kurabiyesi</div>
@@ -471,6 +486,7 @@
 
     <!-- Lokum -->
     <div class="card">
+      <img class="card-img" src="lokum.jpg" alt="Lokum Turkish Delight" loading="lazy" />
       <div class="card-header card-header-pink">
         <div class="card-emoji">🌹</div>
         <div class="card-name">Lokum (Turkish Delight)</div>
@@ -499,6 +515,7 @@
 
     <!-- Tahin Helvası -->
     <div class="card">
+      <img class="card-img" src="helva.jpg" alt="Tahin Helvası" loading="lazy" />
       <div class="card-header card-header-cream">
         <div class="card-emoji">🍯</div>
         <div class="card-name">Tahin Helvası</div>
@@ -530,16 +547,22 @@
   <!-- Drinks -->
   <div class="drinks-row">
     <div class="drink-card">
-      <div class="drink-emoji">🫖</div>
-      <div class="drink-name">Turkish Tea</div>
-      <div class="drink-desc">Classic çay, steeped double-pot style</div>
-      <div class="drink-price">$3</div>
+      <img class="drink-img" src="cay.jpg" alt="Turkish Tea" loading="lazy" />
+      <div class="drink-info">
+        <div class="drink-emoji">🫖</div>
+        <div class="drink-name">Turkish Tea</div>
+        <div class="drink-desc">Classic çay, steeped double-pot style</div>
+        <div class="drink-price">$3</div>
+      </div>
     </div>
     <div class="drink-card">
-      <div class="drink-emoji">☕</div>
-      <div class="drink-name">Turkish Coffee</div>
-      <div class="drink-desc">Rich, dark, brewed in a cezve</div>
-      <div class="drink-price">$4</div>
+      <img class="drink-img" src="kahve.jpg" alt="Turkish Coffee" loading="lazy" />
+      <div class="drink-info">
+        <div class="drink-emoji">☕</div>
+        <div class="drink-name">Turkish Coffee</div>
+        <div class="drink-desc">Rich, dark, brewed in a cezve</div>
+        <div class="drink-price">$4</div>
+      </div>
     </div>
   </div>
 
