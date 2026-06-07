@@ -3,21 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sweets By Sare — Handmade Turkish Sweets · Columbus, OH</title>
+  <title>Sares Turkish Sweets — Handmade · Columbus, OH</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      /* ── Theme variables (changed by swatch picker) ── */
       --primary:         #5C3D24;
       --primary-mid:     #8B5E3C;
+      --primary-dark:    #3E2A19;
       --primary-light:   #F5EADE;
       --primary-light-2: #eeddd0;
-      --hero-to:         #5A8040;
-
-      /* ── Static palette ───────────────────────────── */
-      --pistachio:       #4D7C3A;
-      --pistachio-mid:   #7BA05A;
-      --pistachio-light: #EAF2DC;
       --cream:           #FDF8F0;
       --pink:            #C96A8A;
       --pink-light:      #FAE8F2;
@@ -25,33 +19,6 @@
       --text-light:      #6B4E3D;
       --radius:          16px;
       --shadow:          0 4px 24px rgba(92,61,36,.12);
-    }
-
-    /* ── Green theme ──────────────────────────────── */
-    [data-theme="green"] {
-      --primary:         #2d5c1a;
-      --primary-mid:     #4D7C3A;
-      --primary-light:   #EAF2DC;
-      --primary-light-2: #d4ecbc;
-      --hero-to:         #7BA05A;
-    }
-
-    /* ── Cream / Beige theme ─────────────────────── */
-    [data-theme="cream"] {
-      --primary:         #6B5B45;
-      --primary-mid:     #A09070;
-      --primary-light:   #FBF6EC;
-      --primary-light-2: #F0E8D5;
-      --hero-to:         #C4B898;
-    }
-
-    /* ── Dust Pink theme ──────────────────────────── */
-    [data-theme="pink"] {
-      --primary:         #7a2848;
-      --primary-mid:     #b85070;
-      --primary-light:   #FAE8F2;
-      --primary-light-2: #f4d0e0;
-      --hero-to:         #d4789a;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -71,8 +38,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: .9rem 2rem;
     }
-    .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--primary); }
-    .nav-brand span { color: var(--pistachio); }
+    .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--primary); letter-spacing: .01em; }
     .nav-links { display: flex; gap: 1.8rem; }
     .nav-links a { font-size: .9rem; font-weight: 500; color: var(--text-light); transition: color .2s; }
     .nav-links a:hover { color: var(--primary); }
@@ -86,7 +52,7 @@
 
     /* ── Hero ─────────────────────────────────────── */
     .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 55%, var(--hero-to) 100%);
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--primary-mid) 100%);
       color: #fff;
       text-align: center;
       padding: 5rem 1.5rem 4rem;
@@ -116,7 +82,7 @@
       line-height: 1.15;
       margin-bottom: 1rem;
     }
-    .hero h1 em { font-style: normal; color: #c8e8a0; }
+    .hero h1 em { font-style: normal; color: var(--pink); }
     .hero p {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       max-width: 560px;
@@ -137,12 +103,6 @@
       font-size: .85rem;
       opacity: .7;
     }
-    .hero-emojis {
-      margin-top: 3rem;
-      font-size: 2rem;
-      letter-spacing: .4rem;
-      opacity: .8;
-    }
 
     /* ── Section Wrapper ──────────────────────────── */
     section { padding: 5rem 1.5rem; }
@@ -152,7 +112,7 @@
       font-weight: 700;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--pistachio-mid);
+      color: var(--primary-mid);
       margin-bottom: .6rem;
     }
     .section-title {
@@ -198,12 +158,8 @@
     }
     .card-header {
       padding: 1.6rem 1.6rem 1.2rem;
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-light-2) 100%);
     }
-    .card-header-pistachio { background: linear-gradient(135deg, var(--pistachio-light) 0%, #d4ecbc 100%); }
-    .card-header-brown     { background: linear-gradient(135deg, var(--primary-light) 0%, #eeddd0 100%); }
-    .card-header-pink      { background: linear-gradient(135deg, var(--pink-light) 0%, #f4d0e0 100%); }
-    .card-header-cream     { background: linear-gradient(135deg, #fdf0dc 0%, #f5e4c4 100%); }
-    .card-emoji { font-size: 2.6rem; margin-bottom: .5rem; }
     .card-name { font-size: 1.2rem; font-weight: 800; color: var(--primary); }
     .card-tagline { font-size: .88rem; color: var(--text-light); margin-top: .2rem; font-style: italic; }
     .card-price {
@@ -225,17 +181,14 @@
       padding: .28rem .65rem;
       border-radius: 999px;
       white-space: nowrap;
+      background: var(--primary-light);
+      color: var(--primary);
     }
-    .chip-green  { background: var(--pistachio-light); color: var(--pistachio); }
-    .chip-brown  { background: var(--primary-light); color: var(--primary); }
-    .chip-pink   { background: var(--pink-light); color: var(--pink); }
-    .chip-gold   { background: #fff8dc; color: #8a6200; }
-    .chip-cream  { background: #f5f0e8; color: #5c4030; }
     .card-note {
       font-size: .85rem;
       color: var(--text-light);
       background: #fff;
-      border-left: 3px solid var(--pistachio-mid);
+      border-left: 3px solid var(--primary-mid);
       padding: .6rem .9rem;
       border-radius: 0 8px 8px 0;
     }
@@ -273,7 +226,7 @@
     }
     .drink-card {
       flex: 1; min-width: 200px;
-      background: linear-gradient(135deg, #fdf0dc 0%, #f5e4c4 100%);
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-light-2) 100%);
       border: 1.5px solid #e8d8cc;
       border-radius: var(--radius);
       overflow: hidden;
@@ -289,7 +242,6 @@
       display: block;
     }
     .drink-info { padding: 1.2rem 1.2rem 1.5rem; }
-    .drink-emoji { font-size: 2.2rem; margin-bottom: .5rem; }
     .drink-name { font-size: 1rem; font-weight: 800; color: var(--primary); }
     .drink-desc { font-size: .82rem; color: var(--text-light); margin-top: .25rem; }
     .drink-price { font-size: 1.2rem; font-weight: 800; color: var(--primary-mid); margin-top: .4rem; }
@@ -302,11 +254,8 @@
       border: 1.5px solid #e8c4d8;
       border-radius: var(--radius);
       padding: 1.4rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
+      text-align: center;
     }
-    .seasonal-icon { font-size: 2rem; flex-shrink: 0; }
     .seasonal-text strong { font-size: 1rem; color: var(--primary); display: block; margin-bottom: .25rem; }
     .seasonal-text p { font-size: .87rem; color: var(--text-light); }
 
@@ -326,31 +275,22 @@
     .about-text p { color: var(--text-light); font-size: .96rem; margin-bottom: 1rem; }
     .about-pillars { display: flex; flex-direction: column; gap: .7rem; margin-top: 1.2rem; }
     .pillar {
-      display: flex; align-items: flex-start; gap: .75rem;
       background: #fff;
       border-radius: 10px;
       padding: .8rem 1rem;
       box-shadow: 0 2px 10px rgba(92,61,36,.07);
+      border-left: 3px solid var(--primary-mid);
     }
-    .pillar-icon { font-size: 1.4rem; flex-shrink: 0; }
-    .pillar-text strong { display: block; font-size: .9rem; color: var(--text); }
+    .pillar-text strong { display: block; font-size: .9rem; color: var(--text); margin-bottom: .15rem; }
     .pillar-text span { font-size: .82rem; color: var(--text-light); }
     .about-visual {
       background: #fff;
       border-radius: var(--radius);
-      padding: 1.5rem;
+      padding: 2rem 1.5rem;
       text-align: center;
       box-shadow: var(--shadow);
     }
-    .about-photo {
-      width: 100%;
-      max-width: 220px;
-      border-radius: 12px;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto;
-    }
-    .about-visual h3 { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin: .8rem 0 .4rem; }
+    .about-visual h3 { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: .6rem; }
     .about-visual p { font-size: .85rem; color: var(--text-light); }
 
     /* ── Order ────────────────────────────────────── */
@@ -412,23 +352,7 @@
     }
     footer strong { color: #fff; }
     footer p { font-size: .88rem; margin: .3rem 0; }
-    footer a { color: #c8e8a0; }
-
-    /* ── Color Swatches ──────────────────────────── */
-    .color-swatches {
-      display: flex; gap: .45rem; align-items: center;
-    }
-    .swatch {
-      width: 22px; height: 22px;
-      border-radius: 50%;
-      border: 2.5px solid transparent;
-      cursor: pointer;
-      outline: none;
-      transition: transform .15s, border-color .2s;
-      padding: 0;
-    }
-    .swatch:hover { transform: scale(1.25); }
-    .swatch.active { border-color: rgba(0,0,0,.35); transform: scale(1.15); }
+    footer a { color: var(--pink-light); }
 
     /* ── Responsive ───────────────────────────────── */
     @media (max-width: 640px) {
@@ -442,31 +366,22 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">🍯 <span>Sweets</span> By Sare</div>
+  <div class="nav-brand">Sares Turkish Sweets</div>
   <div class="nav-links">
     <a href="#menu">Menu</a>
     <a href="#about">About</a>
     <a href="#order">Order</a>
-  </div>
-  <div class="color-swatches">
-    <button class="swatch active" data-theme="brown" style="background:#5C3D24" title="Brown"></button>
-    <button class="swatch"        data-theme="green" style="background:#4D7C3A" title="Green"></button>
-    <button class="swatch"        data-theme="pink"  style="background:#C96A8A" title="Dust Pink"></button>
-    <button class="swatch"        data-theme="cream" style="background:#C4B090" title="Cream"></button>
   </div>
   <a href="#order" class="nav-order">Order Now</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-badge">📍 Columbus, OH · Handmade &amp; Traditional</div>
+  <div class="hero-badge">Columbus, OH · Handmade &amp; Traditional</div>
   <h1>Handmade Turkish Sweets<br /><em>Delivered to Your Door</em></h1>
-  <p>Authentic baklava, lokum, cookies and halva — made fresh at home with traditional recipes passed down through generations.</p>
-  <a href="#menu" class="hero-cta">
-    🍯 See the Menu
-  </a>
+  <p>Authentic baklava, şekerpare and lokum — made fresh at home with traditional recipes passed down through generations.</p>
+  <a href="#menu" class="hero-cta">See the Menu</a>
   <p class="hero-sub">Order by text · Pay via Venmo · Columbus delivery</p>
-  <div class="hero-emojis">🥮 🍯 🌹 🍪 🫖 ☕ 🌿</div>
 </section>
 
 <!-- MENU -->
@@ -479,122 +394,125 @@
 
     <!-- Baklava -->
     <div class="card">
-      <div class="badge-popular">⭐ Fan Favorite</div>
+      <div class="badge-popular">Fan Favorite</div>
       <img class="card-img" src="baklava.jpg" alt="Baklava" loading="lazy" />
-      <div class="card-header card-header-pistachio">
-        <div class="card-emoji">🥮</div>
+      <div class="card-header">
         <div class="card-name">Baklava</div>
         <div class="card-tagline">"Crispy layers, honey, pistachios"</div>
         <div class="card-price">$18 / box</div>
       </div>
       <div class="card-body">
         <div class="chip-group">
-          <span class="chip chip-green">🌿 Phyllo Dough</span>
-          <span class="chip chip-green">🫘 Pistachios</span>
-          <span class="chip chip-gold">🍯 Honey Syrup</span>
-          <span class="chip chip-cream">🧈 Butter</span>
-          <span class="chip chip-brown">🌰 Walnuts</span>
+          <span class="chip">Phyllo Dough</span>
+          <span class="chip">Pistachios</span>
+          <span class="chip">Honey Syrup</span>
+          <span class="chip">Butter</span>
+          <span class="chip">Walnuts</span>
         </div>
         <div class="card-note">
-          <strong>📦 12 pieces per box</strong>
+          <strong>12 pieces per box</strong>
           Rich, flaky layers soaked in fragrant honey syrup — made with real butter and freshly ground pistachios.
         </div>
         <div class="card-features">
-          <span class="feature-chip">📦 Long shelf life</span>
-          <span class="feature-chip">🎁 Gift-ready</span>
-          <span class="feature-chip">✋ Handmade</span>
+          <span class="feature-chip">Long shelf life</span>
+          <span class="feature-chip">Gift-ready</span>
+          <span class="feature-chip">Handmade</span>
         </div>
-        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Baklava." class="card-order">📱 Text to Order →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Baklava." class="card-order">Text to Order →</a>
       </div>
     </div>
 
-    <!-- Anne Kurabiyesi -->
+    <!-- Şekerpare -->
     <div class="card">
-      <img class="card-img" src="kurabiye.jpg" alt="Anne Kurabiyesi" loading="lazy" />
-      <div class="card-header card-header-brown">
-        <div class="card-emoji">🍪</div>
-        <div class="card-name">Anne Kurabiyesi</div>
-        <div class="card-tagline">"Mom's butter cookies — melt in your mouth"</div>
+      <img class="card-img" src="sekerpare.jpg" alt="Şekerpare" loading="lazy" />
+      <div class="card-header">
+        <div class="card-name">Şekerpare</div>
+        <div class="card-tagline">"Semolina shortbread soaked in lemon-vanilla syrup"</div>
         <div class="card-price">$14 / box</div>
       </div>
       <div class="card-body">
         <div class="chip-group">
-          <span class="chip chip-cream">🧈 Butter</span>
-          <span class="chip chip-cream">🌾 Flour</span>
-          <span class="chip chip-gold">✨ Powdered Sugar</span>
-          <span class="chip chip-gold">🍦 Vanilla</span>
-          <span class="chip chip-green">🌿 Sesame (optional)</span>
+          <span class="chip">Semolina</span>
+          <span class="chip">Flour</span>
+          <span class="chip">Butter</span>
+          <span class="chip">Egg</span>
+          <span class="chip">Lemon Syrup</span>
+          <span class="chip">Hazelnut</span>
         </div>
         <div class="card-note">
-          <strong>📦 16 cookies per box</strong>
-          Traditional Turkish shortbread — buttery, crumbly, and delicately sweet. A timeless classic.
+          <strong>12 pieces per box</strong>
+          Soft, syrup-soaked semolina shortbread topped with a roasted hazelnut. Crumbly inside, glossy outside — a classic Turkish tea-time sweet.
         </div>
         <div class="card-features">
-          <span class="feature-chip">📦 Long shelf life</span>
-          <span class="feature-chip">🎁 Gift-ready</span>
-          <span class="feature-chip">🏡 Family recipe</span>
+          <span class="feature-chip">Long shelf life</span>
+          <span class="feature-chip">Gift-ready</span>
+          <span class="feature-chip">Family recipe</span>
         </div>
-        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Anne%20Kurabiyesi." class="card-order">📱 Text to Order →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20%C5%9Eekerpare." class="card-order">Text to Order →</a>
       </div>
     </div>
 
     <!-- Lokum -->
     <div class="card">
       <img class="card-img" src="lokum.jpg" alt="Lokum Turkish Delight" loading="lazy" />
-      <div class="card-header card-header-pink">
-        <div class="card-emoji">🌹</div>
+      <div class="card-header">
         <div class="card-name">Lokum (Turkish Delight)</div>
         <div class="card-tagline">"Rose, pistachio &amp; classic flavors"</div>
         <div class="card-price">$15 / box</div>
       </div>
       <div class="card-body">
         <div class="chip-group">
-          <span class="chip chip-pink">🌹 Rose Water</span>
-          <span class="chip chip-green">🫘 Pistachios</span>
-          <span class="chip chip-gold">🍬 Sugar</span>
-          <span class="chip chip-cream">⚗️ Cornstarch</span>
+          <span class="chip">Rose Water</span>
+          <span class="chip">Pistachios</span>
+          <span class="chip">Sugar</span>
+          <span class="chip">Cornstarch</span>
         </div>
         <div class="card-note">
-          <strong>📦 20 pieces per box</strong>
+          <strong>20 pieces per box</strong>
           Soft, fragrant, dusted in powdered sugar — available in rose, pistachio, and classic plain.
         </div>
         <div class="card-features">
-          <span class="feature-chip">📦 Long shelf life</span>
-          <span class="feature-chip">🌿 Vegan</span>
-          <span class="feature-chip">🎁 Gift-ready</span>
+          <span class="feature-chip">Long shelf life</span>
+          <span class="feature-chip">Vegan</span>
+          <span class="feature-chip">Gift-ready</span>
         </div>
-        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Lokum." class="card-order">📱 Text to Order →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Lokum." class="card-order">Text to Order →</a>
       </div>
     </div>
 
-    <!-- Tahin Helvası -->
+    <!--
+      ─────────────────────────────────────────────
+      MOTHER'S DAY SEASONAL · ANNE KURABİYESİ
+      Uncomment in May to feature for Mother's Day.
+      ─────────────────────────────────────────────
     <div class="card">
-      <img class="card-img" src="helva.jpg" alt="Tahin Helvası" loading="lazy" />
-      <div class="card-header card-header-cream">
-        <div class="card-emoji">🍯</div>
-        <div class="card-name">Tahin Helvası</div>
-        <div class="card-tagline">"Sesame halva — rich &amp; traditional"</div>
-        <div class="card-price">$12 / pack</div>
+      <img class="card-img" src="kurabiye.jpg" alt="Anne Kurabiyesi" loading="lazy" />
+      <div class="card-header">
+        <div class="card-name">Anne Kurabiyesi</div>
+        <div class="card-tagline">"Mom's butter cookies — melt in your mouth"</div>
+        <div class="card-price">$14 / box</div>
       </div>
       <div class="card-body">
         <div class="chip-group">
-          <span class="chip chip-brown">🌾 Tahini</span>
-          <span class="chip chip-gold">🍬 Sugar</span>
-          <span class="chip chip-gold">🍦 Vanilla</span>
-          <span class="chip chip-green">🫘 Pistachios (optional)</span>
+          <span class="chip">Butter</span>
+          <span class="chip">Flour</span>
+          <span class="chip">Powdered Sugar</span>
+          <span class="chip">Vanilla</span>
+          <span class="chip">Sesame (optional)</span>
         </div>
         <div class="card-note">
-          <strong>📦 300g per pack</strong>
-          Dense, nutty sesame halva with a crumbly texture. Pure comfort — pairs perfectly with Turkish tea.
+          <strong>16 cookies per box</strong>
+          Traditional Turkish shortbread — buttery, crumbly, and delicately sweet. A timeless classic.
         </div>
         <div class="card-features">
-          <span class="feature-chip">📦 Long shelf life</span>
-          <span class="feature-chip">💪 High energy</span>
-          <span class="feature-chip">🌿 Natural</span>
+          <span class="feature-chip">Long shelf life</span>
+          <span class="feature-chip">Gift-ready</span>
+          <span class="feature-chip">Family recipe</span>
         </div>
-        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Tahin%20Helvas%C4%B1." class="card-order">📱 Text to Order →</a>
+        <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20Anne%20Kurabiyesi." class="card-order">Text to Order →</a>
       </div>
     </div>
+    -->
 
   </div>
 
@@ -603,7 +521,6 @@
     <div class="drink-card">
       <img class="drink-img" src="cay.jpg" alt="Turkish Tea" loading="lazy" />
       <div class="drink-info">
-        <div class="drink-emoji">🫖</div>
         <div class="drink-name">Turkish Tea</div>
         <div class="drink-desc">Classic çay, steeped double-pot style</div>
         <div class="drink-price">$3</div>
@@ -612,7 +529,6 @@
     <div class="drink-card">
       <img class="drink-img" src="kahve.jpg" alt="Turkish Coffee" loading="lazy" />
       <div class="drink-info">
-        <div class="drink-emoji">☕</div>
         <div class="drink-name">Turkish Coffee</div>
         <div class="drink-desc">Rich, dark, brewed in a cezve</div>
         <div class="drink-price">$4</div>
@@ -622,10 +538,9 @@
 
   <!-- Seasonal note -->
   <div class="seasonal-banner">
-    <div class="seasonal-icon">🎉</div>
     <div class="seasonal-text">
       <strong>Seasonal &amp; Special Occasion Sweets</strong>
-      <p>Holiday trays, Eid assortments, wedding favors, and more — available for limited runs. Text Sare to ask about what's coming up!</p>
+      <p>Holiday trays, Eid assortments, Mother's Day Anne Kurabiyesi, wedding favors and more — available for limited runs. Text Sare to ask about what's coming up!</p>
     </div>
   </div>
 
@@ -640,28 +555,24 @@
       <p>Sare grew up surrounded by these flavors and brings that same care to every box she makes. When you order, you're getting something real.</p>
       <div class="about-pillars">
         <div class="pillar">
-          <div class="pillar-icon">🍯</div>
           <div class="pillar-text">
             <strong>Traditional recipes</strong>
             <span>Authentic techniques passed down through family</span>
           </div>
         </div>
         <div class="pillar">
-          <div class="pillar-icon">✋</div>
           <div class="pillar-text">
             <strong>Handmade in small batches</strong>
             <span>Never mass-produced, always fresh</span>
           </div>
         </div>
         <div class="pillar">
-          <div class="pillar-icon">📦</div>
           <div class="pillar-text">
             <strong>Long shelf life</strong>
             <span>Ships well — perfect for gifting</span>
           </div>
         </div>
         <div class="pillar">
-          <div class="pillar-icon">🌿</div>
           <div class="pillar-text">
             <strong>No preservatives</strong>
             <span>Real ingredients, nothing artificial</span>
@@ -670,7 +581,6 @@
       </div>
     </div>
     <div class="about-visual">
-      <img src="sare.png" alt="Sare" class="about-photo" />
       <h3>Hi, I'm Sare!</h3>
       <p>Home baker &amp; Turkish sweets enthusiast in Columbus, OH. I want you to taste a little piece of my culture in every bite.</p>
     </div>
@@ -706,11 +616,11 @@
     </div>
 
     <a href="sms:+13467153432&body=Hi%20Sare!%20I%27d%20like%20to%20order%20some%20Turkish%20sweets." class="text-btn">
-      📱 Text to Order · (346) 715-3432
+      Text to Order · (346) 715-3432
     </a>
 
     <a href="https://venmo.com/kemalaydin" target="_blank" class="venmo-btn" style="margin-top:.75rem;">
-      💙 Pay on Venmo @kemalaydin
+      Pay on Venmo @kemalaydin
     </a>
     <p class="order-note">Columbus, OH deliveries only · Same-day orders by noon · Cash also accepted</p>
   </div>
@@ -718,28 +628,13 @@
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>🍯 Sweets By Sare</strong></p>
+  <p><strong>Sares Turkish Sweets</strong></p>
   <p>Columbus, Ohio · Handmade Turkish Sweets · No Preservatives</p>
   <p style="margin-top:.8rem;">
     Pay via <a href="https://venmo.com/kemalaydin" target="_blank">Venmo @kemalaydin</a>
   </p>
-  <p style="margin-top:1rem; font-size:.78rem; opacity:.5;">© 2025 Sweets By Sare. Made with 🍯 in Columbus.</p>
+  <p style="margin-top:1rem; font-size:.78rem; opacity:.5;">© 2026 Sares Turkish Sweets. Made with love in Columbus.</p>
 </footer>
 
-<script>
-  const swatches = document.querySelectorAll('.swatch');
-  function setTheme(theme) {
-    if (theme === 'brown') {
-      document.documentElement.removeAttribute('data-theme');
-    } else {
-      document.documentElement.setAttribute('data-theme', theme);
-    }
-    swatches.forEach(b => b.classList.toggle('active', b.dataset.theme === theme));
-    localStorage.setItem('sbs-theme', theme);
-  }
-  swatches.forEach(btn => btn.addEventListener('click', () => setTheme(btn.dataset.theme)));
-  const saved = localStorage.getItem('sbs-theme');
-  if (saved) setTheme(saved);
-</script>
 </body>
 </html>
