@@ -385,20 +385,20 @@
     }
     .hero-particles .dot {
       position: absolute;
-      width: 6px; height: 6px;
+      width: 10px; height: 10px;
       border-radius: 50%;
-      background: rgba(255,255,255,.45);
-      filter: blur(1px);
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 0 12px rgba(255,255,255,.7);
       bottom: -20px;
       animation: float-up linear infinite;
     }
-    .hero-particles .dot:nth-child(3n) { background: rgba(251,191,36,.55); width: 4px; height: 4px; }
-    .hero-particles .dot:nth-child(5n) { background: rgba(201,106,138,.55); width: 5px; height: 5px; }
+    .hero-particles .dot:nth-child(3n) { background: rgba(251,191,36,1);  box-shadow: 0 0 14px rgba(251,191,36,.8);  width: 8px; height: 8px; }
+    .hero-particles .dot:nth-child(5n) { background: rgba(255,180,210,1); box-shadow: 0 0 14px rgba(255,180,210,.8); width: 9px; height: 9px; }
     @keyframes float-up {
       0%   { transform: translateY(0) translateX(0) scale(.6); opacity: 0; }
-      12%  { opacity: 1; }
-      85%  { opacity: .9; }
-      100% { transform: translateY(-110vh) translateX(40px) scale(1.1); opacity: 0; }
+      8%   { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateY(-110vh) translateX(60px) scale(1.2); opacity: 0; }
     }
 
     /* ── Coffee steam wisps ───────────────────────── */
@@ -406,27 +406,27 @@
       position: absolute;
       bottom: 0; left: 50%;
       transform: translateX(-50%);
-      width: 280px; height: 200px;
+      width: 380px; height: 260px;
       pointer-events: none;
       z-index: 1;
-      opacity: .35;
+      opacity: .85;
     }
     .coffee-steam span {
       position: absolute;
       bottom: 0;
-      width: 14px; height: 14px;
-      background: radial-gradient(circle, rgba(255,255,255,.9), rgba(255,255,255,0) 70%);
+      width: 30px; height: 30px;
+      background: radial-gradient(circle, rgba(255,255,255,.95), rgba(255,255,255,0) 70%);
       border-radius: 50%;
-      filter: blur(6px);
-      animation: steam 5s ease-in infinite;
+      filter: blur(8px);
+      animation: steam 4.5s ease-in infinite;
     }
-    .coffee-steam span:nth-child(1) { left: 30%;  animation-delay: 0s;   }
-    .coffee-steam span:nth-child(2) { left: 50%;  animation-delay: 1.5s; }
-    .coffee-steam span:nth-child(3) { left: 70%;  animation-delay: 3s;   }
+    .coffee-steam span:nth-child(1) { left: 25%; animation-delay: 0s;   }
+    .coffee-steam span:nth-child(2) { left: 50%; animation-delay: 1.2s; }
+    .coffee-steam span:nth-child(3) { left: 75%; animation-delay: 2.4s; }
     @keyframes steam {
       0%   { transform: translateY(0) scale(.8);  opacity: 0; }
-      30%  { opacity: .7; }
-      100% { transform: translateY(-180px) scale(2.4) translateX(-10px); opacity: 0; }
+      20%  { opacity: .95; }
+      100% { transform: translateY(-240px) scale(3) translateX(-20px); opacity: 0; }
     }
 
     /* ── Hero text staged reveal ──────────────────── */
@@ -480,16 +480,17 @@
     /* ── Sparkle burst on order click ─────────────── */
     .sparkle {
       position: fixed;
-      width: 9px; height: 9px;
+      width: 16px; height: 16px;
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
       transform: translate(-50%, -50%);
-      animation: sparkle-burst 1.4s cubic-bezier(.2,.7,.3,1) forwards;
-      box-shadow: 0 0 8px currentColor;
+      animation: sparkle-burst 1.8s cubic-bezier(.2,.7,.3,1) forwards;
+      box-shadow: 0 0 18px currentColor, 0 0 36px currentColor;
     }
     @keyframes sparkle-burst {
-      0%   { transform: translate(-50%, -50%) scale(1);  opacity: 1; }
+      0%   { transform: translate(-50%, -50%) scale(1.4); opacity: 1; }
+      60%  { opacity: 1; }
       100% { transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(.2); opacity: 0; }
     }
 
@@ -543,18 +544,22 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-particles">
-    <span class="dot" style="left:8%;  animation-duration:14s; animation-delay:0s;"></span>
-    <span class="dot" style="left:18%; animation-duration:18s; animation-delay:2s;"></span>
-    <span class="dot" style="left:27%; animation-duration:12s; animation-delay:4s;"></span>
-    <span class="dot" style="left:36%; animation-duration:16s; animation-delay:1s;"></span>
-    <span class="dot" style="left:45%; animation-duration:20s; animation-delay:6s;"></span>
-    <span class="dot" style="left:55%; animation-duration:13s; animation-delay:3s;"></span>
-    <span class="dot" style="left:64%; animation-duration:17s; animation-delay:5s;"></span>
-    <span class="dot" style="left:73%; animation-duration:15s; animation-delay:0.5s;"></span>
-    <span class="dot" style="left:82%; animation-duration:19s; animation-delay:2.5s;"></span>
-    <span class="dot" style="left:91%; animation-duration:14s; animation-delay:4.5s;"></span>
-    <span class="dot" style="left:12%; animation-duration:22s; animation-delay:7s;"></span>
-    <span class="dot" style="left:60%; animation-duration:21s; animation-delay:8s;"></span>
+    <span class="dot" style="left:5%;  animation-duration:9s;  animation-delay:0s;"></span>
+    <span class="dot" style="left:12%; animation-duration:11s; animation-delay:1s;"></span>
+    <span class="dot" style="left:19%; animation-duration:8s;  animation-delay:2s;"></span>
+    <span class="dot" style="left:26%; animation-duration:10s; animation-delay:0.5s;"></span>
+    <span class="dot" style="left:33%; animation-duration:12s; animation-delay:3s;"></span>
+    <span class="dot" style="left:40%; animation-duration:9s;  animation-delay:1.5s;"></span>
+    <span class="dot" style="left:47%; animation-duration:11s; animation-delay:0s;"></span>
+    <span class="dot" style="left:54%; animation-duration:8s;  animation-delay:2.5s;"></span>
+    <span class="dot" style="left:61%; animation-duration:10s; animation-delay:1s;"></span>
+    <span class="dot" style="left:68%; animation-duration:12s; animation-delay:3.5s;"></span>
+    <span class="dot" style="left:75%; animation-duration:9s;  animation-delay:0.5s;"></span>
+    <span class="dot" style="left:82%; animation-duration:11s; animation-delay:2s;"></span>
+    <span class="dot" style="left:89%; animation-duration:8s;  animation-delay:1.5s;"></span>
+    <span class="dot" style="left:95%; animation-duration:10s; animation-delay:0s;"></span>
+    <span class="dot" style="left:30%; animation-duration:13s; animation-delay:4s;"></span>
+    <span class="dot" style="left:65%; animation-duration:13s; animation-delay:5s;"></span>
   </div>
   <div class="coffee-steam"><span></span><span></span><span></span></div>
   <div class="hero-badge">Columbus, OH · Handmade &amp; Traditional</div>
@@ -853,7 +858,7 @@
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-6px)`;
+        card.style.transform = `perspective(900px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) translateY(-8px) scale(1.02)`;
       });
     });
     card.addEventListener('mouseleave', () => { card.style.transform = ''; });
@@ -877,7 +882,7 @@
     const r = originEl.getBoundingClientRect();
     const cx = r.left + r.width / 2;
     const cy = r.top + r.height / 2;
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 40; i++) {
       const s = document.createElement('span');
       s.className = 'sparkle';
       s.style.background = colors[i % colors.length];
@@ -885,12 +890,12 @@
       s.style.left = cx + 'px';
       s.style.top = cy + 'px';
       const ang = Math.random() * Math.PI * 2;
-      const v = 90 + Math.random() * 130;
+      const v = 140 + Math.random() * 180;
       s.style.setProperty('--tx', Math.cos(ang) * v + 'px');
       s.style.setProperty('--ty', Math.sin(ang) * v + 'px');
-      s.style.animationDelay = (Math.random() * 0.08) + 's';
+      s.style.animationDelay = (Math.random() * 0.12) + 's';
       document.body.appendChild(s);
-      setTimeout(() => s.remove(), 1500);
+      setTimeout(() => s.remove(), 2000);
     }
   }
   document.querySelectorAll('.card-order, .text-btn').forEach(b => {
